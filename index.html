@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中二級數學科 家課冊 (R) 答案</title>
+    <!-- MathJax for rendering LaTeX mathematical equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --border-color: #d6dbdf;
+            --ans-color: #c0392b;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .school-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .doc-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 10px 20px;
+            background-color: #e5e7e9;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 15px;
+            color: #5d6d7e;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .chapter-section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2.chapter-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        h3.ex-title {
+            color: var(--secondary-color);
+            background-color: #ebf5fb;
+            padding: 8px 15px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 0 4px 4px 0;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+
+        .concept-box {
+            background-color: #fcf3cf;
+            border: 1px solid #f9e79f;
+            border-left: 4px solid #f1c40f;
+            padding: 12px 18px;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        .question-block {
+            margin: 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .question-block:last-child {
+            border-bottom: none;
+        }
+
+        .q-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .solution-step {
+            margin-left: 15px;
+            padding: 5px 0;
+        }
+
+        .ans {
+            color: var(--ans-color);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .circle-ans {
+            border: 2px solid var(--ans-color);
+            border-radius: 50%;
+            padding: 2px 6px;
+            color: var(--ans-color);
+            font-weight: bold;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        table.data-table th, table.data-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+        }
+
+        table.data-table th {
+            background-color: #f2f4f4;
+            color: #34495e;
+        }
+
+        .record-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .sub-q {
+            background-color: #fafafa;
+            border: 1px solid #f0f0f0;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .chapter-section { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <div class="header-card">
+        <div class="school-name">H.K.R.S.S. TAI PO SECONDARY SCHOOL</div>
+        <div class="school-name">大埔卍慈中學</div>
+        <div class="doc-title">中二級數學科 家課冊 (R) 答案網頁版</div>
+        <p style="color: #7f8c8d; margin-bottom: 0;">包含：第 3 章 恆等式 | 第 4 章 代數分式 | 第 7 章 續數據的處理</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-tabs">
+        <a href="#ch3" class="nav-tab">第 3 章 恆等式</a>
+        <a href="#ch4" class="nav-tab">第 4 章 代數分式</a>
+        <a href="#ch7" class="nav-tab">第 7 章 續數據的處理</a>
+        <a href="#record" class="nav-tab">功課紀錄表範本</a>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div id="ch3" class="chapter-section">
+        <h2 class="chapter-title">第 3 章 恆等式</h2>
+
+        <h3 class="ex-title">Ex 3A 恆等式的判定</h3>
+        <div class="concept-box">
+            <strong>恆等式：</strong>若一個方程的左右兩方的同類項完全相同，則該方程必定是恆等式。
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">1. 證明下列各方程是恆等式。</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    <strong>(a) $4(2x+5)=8x+20$</strong><br><br>
+                    左方 $=4(2x+5)$<br>
+                    $=4(2x)+4(5)$<br>
+                    $= \underline{\text{ $8x+20$ }}$<br><br>
+                    右方 $= 8x+20$<br><br>
+                    左方 ( <span class="circle-ans">=</span> / $\neq$ ) 右方<br>
+                    $\therefore$ 這方程 ( <span class="circle-ans">是</span> / 不是 ) 恆等式。
+                </div>
+                <div class="sub-q">
+                    <strong>(b) $2x(3x-1)=6x^{2}-2x$</strong><br><br>
+                    左方 $= 2x(3x-1)$<br>
+                    $= 2x(3x)-2x(1)$<br>
+                    $= \underline{\text{ $6x^{2}-2x$ }}$<br><br>
+                    右方 $= 6x^{2}-2x$<br><br>
+                    左方 ( <span class="circle-ans">=</span> / $\neq$ ) 右方<br>
+                    $\therefore$ 這方程 ( <span class="circle-ans">是</span> / 不是 ) 恆等式。
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 證明下列各方程是恆等式。</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    <strong>(a) $3(10a-5)-3=6(5a-3)$</strong><br><br>
+                    左方 $= 3(10a-5)-3$<br>
+                    $= 3(10a)-3(5)-3$<br>
+                    $= \underline{\text{ $30a-18$ }}$<br><br>
+                    右方 $= 6(5a-3)$<br>
+                    $= 6(5a)-6(3)$<br>
+                    $= \underline{\text{ $30a-18$ }}$<br><br>
+                    左方 ( <span class="circle-ans">=</span> / $\neq$ ) 右方<br>
+                    $\therefore$ 這方程 ( <span class="circle-ans">是</span> / 不是 ) 恆等式。
+                </div>
+                <div class="sub-q">
+                    <strong>(b) $(x+7)(x-3)=x^{2}+4x-21$</strong><br><br>
+                    左方 $= (x+7)(x-3)$<br>
+                    $= x(x)-x(3)+7(x)-7(3)$<br>
+                    $= x^{2}-3x+7x-21$<br>
+                    $= \underline{\text{ $x^{2}+4x-21$ }}$<br><br>
+                    右方 $= x^{2}+4x-21$<br><br>
+                    左方 ( <span class="circle-ans">=</span> / $\neq$ ) 右方<br>
+                    $\therefore$ 這方程 ( <span class="circle-ans">是</span> / 不是 ) 恆等式。
+                </div>
+            </div>
+        </div>
+
+        <h3 class="ex-title">Ex 3A 求恆等式中的未知常數</h3>
+        <div class="concept-box">
+            <strong>係數比較法：</strong>恆等式中左右兩方的同類項必定相同，利用這個原理，我們可以求出一些恆等式中未知常數的值。
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">1. 求下列各恆等式中的未知常數 A 及 B。</div>
+            <div class="sub-q">
+                <strong>(c) $3(2x-8) \equiv Ax+B$</strong><br>
+                展開左方： $3(2x)-3(8) \equiv Ax+B$<br>
+                $6x - 24 \equiv Ax+B$<br>
+                比較恆等式的左方和右方，可得：<br>
+                $\therefore A = \underline{\text{ $6$ }}$, $B = \underline{\text{ $-24$ }}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 若 $x(5x+2) \equiv Ax^{2}+Bx$，其中 A 和 B 為常數，求 A 和 B 的值。</div>
+            <div class="sub-q">
+                展開左方： $x(5x+2) \equiv Ax^{2}+Bx$<br>
+                $x(5x)+x(2) \equiv Ax^{2}+Bx$<br>
+                $5x^{2}+2x \equiv Ax^{2}+Bx$<br>
+                比較恆等式的左方和右方，可得：<br>
+                $\therefore A = \underline{\text{ $5$ }}$, $B = \underline{\text{ $2$ }}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">3. 若 $(2x-3)(x+5) \equiv 2x^{2}+Ax+B$，其中 A 和 B 為常數，求 A 和 B 的值。</div>
+            <div class="sub-q">
+                展開左方：<br>
+                $(2x-3)(x+5) \equiv 2x^{2}+Ax+B$<br>
+                $2x(x)+2x(5)-3(x)-3(5) \equiv 2x^{2}+Ax+B$<br>
+                $2x^{2}+10x-3x-15 \equiv 2x^{2}+Ax+B$<br>
+                $2x^{2}+7x-15 \equiv 2x^{2}+Ax+B$<br>
+                比較恆等式的左方和右方，可得：<br>
+                $\therefore A = \underline{\text{ $7$ }}$, $B = \underline{\text{ $-15$ }}$
+            </div>
+        </div>
+
+        <h3 class="ex-title">Ex 3B 平方差的恆等式</h3>
+        <div class="concept-box">
+            <strong>平方差恆等式：</strong>$(a+b)(a-b) \equiv a^{2}-b^{2}$
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">1. 展開下列各式。</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    (a) $(x+4)(x-4)$<br>
+                    $= (x)^{2}-(4)^{2}$<br>
+                    $= \underline{\text{ $x^{2}-16$ }}$
+                </div>
+                <div class="sub-q">
+                    (b) $(3a+1)(3a-1)$<br>
+                    $= (3a)^{2}-(1)^{2}$<br>
+                    $= \underline{\text{ $9a^{2}-1$ }}$
+                </div>
+                <div class="sub-q">
+                    (c) $(6+5p)(6-5p)$<br>
+                    $= (6)^{2}-(5p)^{2}$<br>
+                    $= \underline{\text{ $36-25p^{2}$ }}$
+                </div>
+                <div class="sub-q">
+                    (d) $(2+3a)(3a-2)$<br>
+                    $= (3a+2)(3a-2)$<br>
+                    $= (3a)^{2}-(2)^{2}$<br>
+                    $= \underline{\text{ $9a^{2}-4$ }}$
+                </div>
+            </div>
+        </div>
+
+        <h3 class="ex-title">Ex 3C 全平方的恆等式</h3>
+        <div class="concept-box">
+            <strong>完全平方恆等式：</strong><br>
+            $(a+b)^{2} \equiv a^{2}+2ab+b^{2}$<br>
+            $(a-b)^{2} \equiv a^{2}-2ab+b^{2}$
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">1. 利用完全平方的恆等式，展開下列各式。</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    (a) $(y+5)^{2}$<br>
+                    $= (y)^{2}+2(y)(5)+(5)^{2}$<br>
+                    $= \underline{\text{ $y^{2}+10y+25$ }}$
+                </div>
+                <div class="sub-q">
+                    (b) $(a+4)^{2}$<br>
+                    $= (a)^{2}+2(a)(4)+(4)^{2}$<br>
+                    $= \underline{\text{ $a^{2}+8a+16$ }}$
+                </div>
+                <div class="sub-q" style="grid-column: span 2;">
+                    (c) $(5m+6)^{2}$<br>
+                    $= (5m)^{2}+2(5m)(6)+(6)^{2}$<br>
+                    $= \underline{\text{ $25m^{2}+60m+36$ }}$
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 利用完全平方的恆等式，展開下列各式。</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    (a) $(x-7)^{2}$<br>
+                    $= (x)^{2}-2(x)(7)+(7)^{2}$<br>
+                    $= \underline{\text{ $x^{2}-14x+49$ }}$
+                </div>
+                <div class="sub-q">
+                    (b) $(8y-3)^{2}$<br>
+                    $= (8y)^{2}-2(8y)(3)+(3)^{2}$<br>
+                    $= \underline{\text{ $64y^{2}-48y+9$ }}$
+                </div>
+                <div class="sub-q">
+                    (c) $(x-5y)^{2}$<br>
+                    $= (x)^{2}-2(x)(5y)+(5y)^{2}$<br>
+                    $= \underline{\text{ $x^{2}-10xy+25y^{2}$ }}$
+                </div>
+                <div class="sub-q">
+                    (d) $(4-7h)^{2}$<br>
+                    $= (4)^{2}-2(4)(7h)+(7h)^{2}$<br>
+                    $= \underline{\text{ $16-56h+49h^{2}$ }}$
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div id="ch4" class="chapter-section">
+        <h2 class="chapter-title">第 4 章 代數分式</h2>
+
+        <h3 class="ex-title">Ex 4A 代數分式的化簡</h3>
+
+        <div class="question-block">
+            <div class="q-title">1. 化簡下列各代數分式。（提示：消去公因式）</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    (a) $\dfrac{6}{2y}$<br>
+                    $= \underline{\text{ $\dfrac{3}{y}$ }}$
+                </div>
+                <div class="sub-q">
+                    (b) $\dfrac{15c^{3}d^{2}}{5cd}$<br>
+                    $= \underline{\text{ $3c^{2}d$ }}$
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 化簡下列各代數分式。（提示：消去公因式）</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    (a) $\dfrac{6(a+b)}{2(a+b)}$<br>
+                    $= \underline{\text{ $3$ }}$
+                </div>
+                <div class="sub-q">
+                    (b) $\dfrac{20x+10y}{5y}$<br>
+                    $= \dfrac{10(2x+y)}{5y}$<br>
+                    $= \underline{\text{ $\dfrac{2(2x+y)}{y}$ }}$
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">3. 化簡下列各代數分式。</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    (a) $\dfrac{2a}{3b} \times \dfrac{6b}{4a}$<br>
+                    $= \underline{\text{ $1$ }}$
+                </div>
+                <div class="sub-q">
+                    (b) $\dfrac{c}{7d} \times \dfrac{14d^{3}}{c^{2}}$<br>
+                    $= \underline{\text{ $\dfrac{2d^{2}}{c}$ }}$
+                </div>
+                <div class="sub-q" style="grid-column: span 2;">
+                    (c) $\dfrac{5}{9b} \div \dfrac{5a}{18b^{2}}$<br>
+                    $= \dfrac{5}{9b} \times \dfrac{18b^{2}}{5a}$<br>
+                    $= \underline{\text{ $\dfrac{2b}{a}$ }}$
+                </div>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">4. 化簡下列各代數分式。（提示：同分母，分子可直接加減。）</div>
+            <div class="grid-layout">
+                <div class="sub-q">
+                    (a) $\dfrac{5x}{3y} + \dfrac{7x}{3y}$<br>
+                    $= \dfrac{5x + 7x}{3y}$<br>
+                    $= \dfrac{12x}{3y}$<br>
+                    $= \underline{\text{ $\dfrac{4x}{y}$ }}$
+                </div>
+                <div class="sub-q">
+                    (b) $\dfrac{4x}{3x-1} - \dfrac{x}{3x-1}$<br>
+                    $= \dfrac{4x - x}{3x-1}$<br>
+                    $= \underline{\text{ $\dfrac{3x}{3x-1}$ }}$
+                </div>
+            </div>
+        </div>
+
+        <h3 class="ex-title">Ex 4B 公式和代入法</h3>
+
+        <div class="question-block">
+            <div class="q-title">1. 已知 $P = 4I$。若 $I = 7$，求 P 的值。</div>
+            <div class="sub-q">
+                $P = 4(7)$<br>
+                $P = \underline{\text{ $28$ }}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 已知 $D = ST$。若 $D = 35$ 及 $S = 5$，求 T 的值。</div>
+            <div class="sub-q">
+                $(35) = (5)T$<br>
+                $\dfrac{35}{5} = T$<br>
+                $T = \underline{\text{ $7$ }}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">3. 已知公式 $u = v - at$，若 $u = 9$、$a = 1$ 及 $t = 3$，求 v 的值。</div>
+            <div class="sub-q">
+                $u = v - at$<br>
+                $(9) = v - (1)(3)$<br>
+                $(9) + (3) = v$<br>
+                $v = \underline{\text{ $12$ }}$
+            </div>
+        </div>
+
+        <h3 class="ex-title">Ex 4C 公式主項的變換</h3>
+
+        <div class="question-block">
+            <div class="q-title">1. 已知公式 $P = a + b + c$，令 a 成為公式的主項。</div>
+            <div class="sub-q">
+                $P = a + b + c$<br>
+                $P - b - c = a$<br>
+                $a = \underline{\text{ $P - b - c$ }}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 已知公式 $3x - 5 = y$，令 x 成為公式的主項。</div>
+            <div class="sub-q">
+                $3x - 5 = y$<br>
+                $3x = y + 5$<br>
+                $x = \underline{\text{ $\dfrac{y+5}{3}$ }}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">3. 已知公式 $R = sa - sk$，令 s 成為公式的主項。</div>
+            <div class="sub-q">
+                $R = sa - sk$<br>
+                $R = s(a - k)$<br>
+                $\dfrac{R}{a - k} = s$<br>
+                $s = \underline{\text{ $\dfrac{R}{a-k}$ }}$
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 7 -->
+    <div id="ch7" class="chapter-section">
+        <h2 class="chapter-title">第 7 章 續數據的處理</h2>
+
+        <h3 class="ex-title">Ex 7A 數據的組織</h3>
+        <div class="concept-box">
+            <strong>例：</strong>假設把一組數據按以下組區間分組：$5\text{m}-9\text{m}, 10\text{m}-14\text{m}, 15\text{m}-19\text{m}$ 等。<br>
+            對於組區間 $10\text{m}-14\text{m}$：<br>
+            (a) 下組限 $= 10\text{m}$，上組限 $= 14\text{m}$<br>
+            (b) 組中點 $= \dfrac{\text{下組限}+\text{上組限}}{2} = \dfrac{10+14}{2}\text{m} = 12\text{m}$<br>
+            (c) 下組界 $= 9.5\text{m}$，上組界 $= 14.5\text{m}$<br>
+            (d) 組距 $= \text{上組界}-\text{下組界} = (14.5-9.5)\text{m} = 5\text{m}$
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">1. 完成下表。</div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>組區間</th>
+                        <th>下組限</th>
+                        <th>上組限</th>
+                        <th>組中點</th>
+                        <th>下組界</th>
+                        <th>上組界</th>
+                        <th>組距</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10-19</td>
+                        <td>10</td>
+                        <td>19</td>
+                        <td>$\dfrac{10+19}{2} = \mathbf{14.5}$</td>
+                        <td>9.5</td>
+                        <td>19.5</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>20-29</td>
+                        <td>20</td>
+                        <td><span class="ans">29</span></td>
+                        <td>$\dfrac{20+29}{2} = \mathbf{24.5}$</td>
+                        <td>19.5</td>
+                        <td>29.5</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 參看以下的頻數分佈表。</div>
+            <table class="data-table">
+                <tr>
+                    <th>組區間</th>
+                    <td>1-10</td>
+                    <td>11-20</td>
+                    <td>21-30</td>
+                    <td>31-40</td>
+                    <td>41-50</td>
+                </tr>
+                <tr>
+                    <th>頻數</th>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>9</td>
+                    <td>7</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <p>寫出頻數最高和頻數最低的組區間：</p>
+            <p>頻數最高的組區間：<span class="ans">21-30</span></p>
+            <p>頻數最低的組區間：<span class="ans">41-50</span></p>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">3. 下表所示為一些學生於某天溫習的時間。</div>
+            <table class="data-table">
+                <tr>
+                    <th>時間 (min)</th>
+                    <td>30-59</td>
+                    <td>60-89</td>
+                    <td>90-119</td>
+                    <td>120-149</td>
+                    <td>150-179</td>
+                </tr>
+                <tr>
+                    <th>頻數</th>
+                    <td>3</td>
+                    <td>9</td>
+                    <td>20</td>
+                    <td>7</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <div class="sub-q">
+                (a) 求第三個組區間的組中點。<br>
+                組中點 $= \dfrac{90+119}{2} = \underline{\text{ $104.5$ }}\text{ min}$<br><br>
+                (b) 求第三個組區間的上組限和下組限。<br>
+                上組限 $= \underline{\text{ $119$ }}\text{ min}$，下組限 $= \underline{\text{ $90$ }}\text{ min}$<br><br>
+                (c) 求第三個組區間的上組界和下組界。<br>
+                上組界 $= \underline{\text{ $119.5$ }}\text{ min}$，下組界 $= \underline{\text{ $89.5$ }}\text{ min}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">4. 下表所示為一些學生在陸運會中的跳遠成績。</div>
+            <table class="data-table">
+                <tr>
+                    <th>距離 (cm)</th>
+                    <td>100-149</td>
+                    <td>150-199</td>
+                    <td>200-249</td>
+                    <td>250-299</td>
+                    <td>300-349</td>
+                </tr>
+                <tr>
+                    <th>頻數</th>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>6</td>
+                </tr>
+            </table>
+            <div class="sub-q">
+                (a) 求跳遠成績低於 $199.5\text{ cm}$ 的學生數目。<br>
+                所需學生數目 $= 5 + 10 = \underline{\text{ $15$ }}$ 人<br><br>
+                (b) 求跳遠成績低於 $299.5\text{ cm}$ 的學生數目。<br>
+                所需學生數目 $= 5 + 10 + 12 + 7 = \underline{\text{ $34$ }}$ 人
+            </div>
+        </div>
+
+        <h3 class="ex-title">Ex 7B 數據的表達</h3>
+
+        <div class="question-block">
+            <div class="q-title">1. （組織圖）某大廈內住宅單位的面積分佈</div>
+            <p>數據記錄：$349.5-399.5$: 12 個，$399.5-449.5$: 26 個，$449.5-499.5$: 44 個，$499.5-549.5$: 28 個，$549.5-599.5$: 14 個，$599.5-649.5$: 6 個。</p>
+            <div class="sub-q">
+                求該大廈內住宅單位的總數。<br>
+                單位的總數 $= 12 + 26 + 44 + 28 + 14 + 6 = \underline{\text{ $130$ }}\text{ 個}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. （組織圖）某公園內一些樹幹的圓周的分佈</div>
+            <p>數據記錄：$119.5-139.5$: 3 棵，$139.5-159.5$: 23 棵，$159.5-179.5$: 18 棵，$179.5-199.5$: 8 棵，$199.5-219.5$: 5 棵。</p>
+            <div class="sub-q">
+                求樹幹的圓周大於或等於 $179.5\text{ cm}$ 的樹的數目。<br>
+                樹的數目 $= 8 + 5 = \underline{\text{ $13$ }}\text{ 棵}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">3. （頻數多邊形）某工作坊內手工藝品的售價分佈</div>
+            <p>數據記錄：組中點 50: 4 個，55: 14 個，60: 36 個，65: 18 個，70: 8 個。</p>
+            <div class="sub-q">
+                (a) 對於頻數最高的組區間，求對應的頻數和組中點。<br>
+                對應的頻數 $= \underline{\text{ $36$ }}\text{ 個}$，對應的組中點 $= \underline{\text{ $\$60$ }}$<br><br>
+                (b) 該工作坊內共有多少件手工藝品？<br>
+                手工藝品的數目 $= 4 + 14 + 36 + 18 + 8 = \underline{\text{ $80$ }}\text{ 個}$
+            </div>
+        </div>
+
+        <h3 class="ex-title">Ex 7C 累積頻數</h3>
+
+        <div class="question-block">
+            <div class="q-title">1. 下表所示為 70 名女生的身高。</div>
+            <table class="data-table">
+                <tr>
+                    <th>身高 (cm)</th>
+                    <td>146-150</td>
+                    <td>151-155</td>
+                    <td>156-160</td>
+                    <td>161-165</td>
+                    <td>166-170</td>
+                    <td>171-175</td>
+                </tr>
+                <tr>
+                    <th>頻數</th>
+                    <td>6</td>
+                    <td>13</td>
+                    <td>22</td>
+                    <td>18</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <p>根據以上數據，完成以下的累積頻數表：</p>
+            <table class="data-table">
+                <tr>
+                    <th>身高少於 (cm)</th>
+                    <td>145.5</td>
+                    <td>150.5</td>
+                    <td>155.5</td>
+                    <td>160.5</td>
+                    <td>165.5</td>
+                    <td>170.5</td>
+                    <td>175.5</td>
+                </tr>
+                <tr>
+                    <th>累積頻數</th>
+                    <td><span class="ans">0</span></td>
+                    <td><span class="ans">6</span></td>
+                    <td><span class="ans">19</span></td>
+                    <td><span class="ans">41</span></td>
+                    <td><span class="ans">59</span></td>
+                    <td><span class="ans">66</span></td>
+                    <td><span class="ans">70</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">2. 100 名現職模特兒的身高累積頻數數據</div>
+            <table class="data-table">
+                <tr>
+                    <th>身高低於 (cm)</th>
+                    <td>160.5</td>
+                    <td>165.5</td>
+                    <td>170.5</td>
+                    <td>175.5</td>
+                    <td>180.5</td>
+                    <td>185.5</td>
+                </tr>
+                <tr>
+                    <th>累積頻數</th>
+                    <td>0</td>
+                    <td>12</td>
+                    <td>36</td>
+                    <td>64</td>
+                    <td>80</td>
+                    <td>100</td>
+                </tr>
+            </table>
+            <p><em>(註：繪圖座標點分別為 $(160.5, 0), (165.5, 12), (170.5, 36), (175.5, 64), (180.5, 80), (185.5, 100)$)</em></p>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">3. （累積頻數多邊形）一些少年某月的流動數據用量</div>
+            <div class="sub-q">
+                (a) 求該月流動數據用量少於 $3.5\text{ GB}$ 的少年人數。<br>
+                用量少於 $3.5\text{ GB}$ 的少年人數 $= \underline{\text{ $42$ }}\text{ 人}$<br><br>
+                (b) 求該月流動數據用量少於 $6.5\text{ GB}$ 的少年人數。<br>
+                用量少於 $6.5\text{ GB}$ 的少年人數 $= \underline{\text{ $64$ }}\text{ 人}$
+            </div>
+        </div>
+
+        <div class="question-block">
+            <div class="q-title">4. （累積頻數曲線）某足球隊成員的年齡</div>
+            <div class="sub-q">
+                (a) 該足球隊共有多少名成員？<br>
+                該足球隊的成員數目 $= \underline{\text{ $48$ }}\text{ 人}$<br><br>
+                (b) 該足球隊有多少名 30 歲以下的成員？<br>
+                30 歲以下的足球隊成員數目 $= \underline{\text{ $34$ }}\text{ 人}$<br><br>
+                (c) 該足球隊有多少名 30 歲或以上的成員？<br>
+                30 歲或以上的足球隊成員數目 $= 48 - 34 = \underline{\text{ $14$ }}\text{ 人}$
+            </div>
+        </div>
+    </div>
+
+    <!-- Record Table -->
+    <div id="record" class="chapter-section">
+        <h2 class="chapter-title">功課紀錄表範本</h2>
+        <table class="data-table record-table">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">次數</th>
+                    <th style="width: 25%;">交功課日期</th>
+                    <th style="width: 25%;">頁數/練習</th>
+                    <th style="width: 20%;">得分</th>
+                    <th style="width: 20%;">批改日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
+```eof
+
+已為你生成包含這三份 PDF 所有數學內容與答案的單一 HTML 檔案。
+
+**主要特點：**
+1. **數學渲染：** 整合了 MathJax 庫，能夠清晰美觀地渲染所有代數式、分數、指數與數學符號。
+2. **答題重點高亮：** 填空答案與選擇標記均以紅色加粗劃線或圈選方式清楚呈現在網頁上。
+3. **響應式排版：** 包含了導覽標籤，方便快速切換不同章節，且適應電腦與手機螢幕閱讀。
